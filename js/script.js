@@ -1,20 +1,37 @@
 let menu = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.navbar'); // Corrected the class name from 'nabar'
+let navbar = document.querySelector('.navbar');
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active'); // Fixed method call
+    navbar.classList.toggle('active');
 };
 
 window.onscroll = () => {
     menu.classList.remove('fa-times');
-    navbar.classList.remove('active'); // Fixed method call
+    navbar.classList.remove('active');
 };
 
-var swiper = new Swiper(".home-slider", { // Capitalized 'Swiper' and corrected the selector
+var swiperHome = new Swiper(".home-slider", {
     navigation: {
-        nextEl: ".swiper-button-next", // Ensure this matches your HTML
-        prevEl: ".swiper-button-prev", // Ensure this matches your HTML
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-    loop: true, // Add loop option here for better organization
+    loop: true,
+});
+
+var swiperReviews = new Swiper(".riviews-slider", { 
+    loop: true,
+    spaceBetween: 20,
+    grabCursor: true,
+    breakpoints: {
+        640: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    }
 });
